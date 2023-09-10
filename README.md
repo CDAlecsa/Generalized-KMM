@@ -35,7 +35,7 @@ $$A^{[j]}\_{t, k} = \xi\_k( x^{\prime}\_{t, (j)} ) \text{ for each } t \in \lbra
 
 # Remarks:
 * Hyper-parameters: $\varepsilon$, $B$.
-* The variance $\sigma\^2$ of the kernel $K$ can be treated in different manners:
+* Our parameter $\sigma$ is denoted as $\gamma$ in the *sklearn* implementation from [8] (and when $\gamma \approx \tilde{\sigma}^{-2}$ then the aforementioned parameter is associated with the variance of the kernel $K$). Furthermore, $\sigma$ can be treated in different manners:
   * it can be given as a hyper-parameter regardless of which kernel we are using
   * the variance of each kernel $K$ which appears in the computations is calculated with respect to the whole training data using the function *get_kernel_width* from [1] (as in the classical KMM approach). The option can be activated by setting 'sigma = adaptive' in the initialization of *Generalized_KMM*.
   * the default value 'sigma = None' for *Generalized_KMM* objects sets the variance of each kernel $K$ which appears in the computations to the default value of the underlying *sklearn* kernel.
